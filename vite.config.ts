@@ -1,7 +1,7 @@
 import react from '@vitejs/plugin-react'
 import { URL, fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
-import mkcert from 'vite-plugin-mkcert'
+// import mkcert from 'vite-plugin-mkcert'
 import { VitePWA } from 'vite-plugin-pwa'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
@@ -12,7 +12,7 @@ export default defineConfig({
     tsconfigPaths({
       parseNative: false,
     }),
-    mkcert(),
+    // mkcert(),
     VitePWA({
       registerType: 'autoUpdate',
     }),
