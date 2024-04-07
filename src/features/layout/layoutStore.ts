@@ -8,7 +8,7 @@ type StoryState = {
 }
 
 export const useLayoutStore = create<StoryState>()(
-  devtools((set, get) => ({
+  devtools(set => ({
     isMenuOpened: false,
     setIsMenuOpened: isOpened => {
       set({ isMenuOpened: isOpened })

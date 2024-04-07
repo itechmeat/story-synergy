@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import cn from 'classnames'
-import { Size } from '@/types/ui'
+import { Size } from '../../types/ui'
 import styles from './Spinner.module.scss'
 
 type SpinnerProps = {

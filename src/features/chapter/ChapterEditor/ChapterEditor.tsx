@@ -17,11 +17,11 @@ type ChapterEditorProps = {
 export const ChapterEditor: FC<ChapterEditorProps> = ({ chapter }) => {
   const { getAllChapters, updateChapter } = useChapterStore()
 
-  const [isEditable, setIsEditable] = useState(false)
+  const [isEditable] = useState(false)
   const [iteration, setIteration] = useState(0)
-  const [lang, setLang] = useState<Language>(Language.Russian)
+  const [lang] = useState<Language>(Language.Russian)
   const [isLoading, setIsLoading] = useState(false)
-  const [content, setContent] = useState<JSONContent>(chapter.content || buildEditorValue(''))
+  const [, setContent] = useState<JSONContent>(chapter.content || buildEditorValue(''))
 
   const allChapters = useMemo(() => {
     return getAllChapters()

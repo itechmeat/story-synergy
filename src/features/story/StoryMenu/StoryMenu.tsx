@@ -38,7 +38,7 @@ export const StoryMenu: FC<Props> = ({ story, expandedKeys, onAddChapter }) => {
     }) as DataNode[]
   }, [getChapterById, getPartById, story])
 
-  const onDragEnter: TreeProps['onDragEnter'] = info => {
+  const onDragEnter: TreeProps['onDragEnter'] = () => {
     // console.log('onDragEnter', info)
     // expandedKeys, set it when controlled is needed
     // setExpandedKeys(info.expandedKeys)
