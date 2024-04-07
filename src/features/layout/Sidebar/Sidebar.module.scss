@@ -1,0 +1,14 @@
+.sidebar {
+  flex: 0 0 240px;
+  position: relative;
+  background: var(--color-panel);
+  color: var(--color-text);
+
+  @media (max-width: 800px) {
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    left: 0;
+    height: 100%;
+  }
+}

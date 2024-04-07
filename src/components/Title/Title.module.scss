@@ -1,0 +1,13 @@
+.title {
+  --title-block-padding: var(--x-title-block-padding, 0);
+  --title-inline-padding: var(--x-title-inline-padding, 0);
+
+  flex: 1;
+  width: 100%;
+  padding: var(--title-block-padding) var(--title-inline-padding);
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--color-link);
+  }
+}

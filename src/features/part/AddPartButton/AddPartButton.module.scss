@@ -1,0 +1,27 @@
+.plus {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-tiny);
+  position: relative;
+  width: 100%;
+  height: var(--size-control-base);
+  margin: 0;
+  border: none;
+  background: none;
+  color: var(--color-corder);
+  font-size: var(--font-tiny);
+  transition: gap 0.2s;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '~';
+    display: inline-block;
+  }
+
+  &:hover {
+    gap: var(--space-small);
+  }
+}

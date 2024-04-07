@@ -1,0 +1,40 @@
+// @import './breakpoints';
+
+@mixin device($size) {
+  @if $size == mobile {
+    // Mobile only
+    @media (max-width: #{$bpTablet}px) {
+      @content;
+    }
+  } @else if $size == tablet {
+    // Tablet only
+    @media (min-width: #{$bpTablet + 1}px) and (max-width: #{$bpDesktop}px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    // Desktop only
+    @media (min-width: #{$bpDesktop + 1}px) {
+      @content;
+    }
+  } @else if $size == miniMobile {
+    @media (max-width: #{$bpMobile}px) {
+      @content;
+    }
+  } @else if $size == notMiniMobile {
+    @media (min-width: #{$bpMobile + 1}px) {
+      @content;
+    }
+  } @else if $size == notDesktop {
+    // Mobile and Tablet
+    @media (max-width: #{$bpDesktop}px) {
+      @content;
+    }
+  } @else if $size == notMobile {
+    // Tablet and Desktop
+    @media (min-width: #{$bpTablet + 1}px) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

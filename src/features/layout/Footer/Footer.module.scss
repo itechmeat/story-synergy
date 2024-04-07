@@ -1,0 +1,14 @@
+.footer {
+  flex: 0 0 auto;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--color-text-alt);
+  text-align: center;
+}
+
+.wrapper {
+  padding: var(--space-base);
+}

@@ -1,0 +1,120 @@
+.editor {
+  --tiptap-height: var(--rc-tiptap-height, 48px);
+  --tiptap-error-border-color: var(--rc-tiptap-error-color, var(--theme-decoration-red-60));
+  --tiptap-successful-border-color: var(
+    --rc-tiptap-successful-color,
+    var(--theme-decoration-green-80)
+  );
+
+  flex: 1;
+  position: relative;
+  border: 1px solid var(--theme-border-default);
+  background: var(--color-common);
+  // transition: padding-top 0.2s ease-in-out;
+}
+
+.viewer {
+  background: none;
+}
+
+.focused {
+  overflow: visible;
+  // padding-block-start: var(--tiptap-height);
+  border-color: var(--theme-border-focus);
+  box-shadow: 0 0 0 1px var(--theme-border-focus);
+}
+
+.editorWrapper {
+  outline: none;
+
+  .editor & {
+    padding: var(--size-xs) var(--size-m);
+  }
+
+  & > *:first-child {
+    margin-block-start: 0;
+  }
+
+  & > *:last-child {
+    margin-block-end: 0;
+  }
+
+  & > p > code {
+    padding: 0 var(--size-xxs);
+    border: 1px solid var(--theme-border-default);
+    background: var(--color-primary-75);
+    color: var(--theme-decoration-red-20);
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    &,
+    &:hover,
+    &:active,
+    &:visited,
+    &:visited:hover {
+      color: var(--theme-text-accent-informal);
+    }
+  }
+}
+
+.successful {
+  border-color: var(--tiptap-successful-border-color);
+
+  &:hover:not(.disabled) {
+    border-color: var(--tiptap-successful-border-color);
+  }
+
+  &:focus-within:not(.disabled) {
+    border-color: transparent;
+    outline: 2px solid var(--tiptap-successful-border-color);
+  }
+}
+
+.error {
+  border-color: var(--tiptap-error-border-color);
+
+  &:hover:not(.disabled) {
+    border-color: var(--tiptap-error-border-color);
+  }
+
+  &:focus-within:not(.disabled) {
+    border-color: transparent;
+    outline: 2px solid var(--tiptap-error-border-color);
+  }
+}
+
+.panel {
+  // position: absolute;
+  // z-index: 5;
+  // inset-block-start: 0;
+  // inset-inline-start: 0;
+  width: 100%;
+  margin-bottom: var(--space-base);
+  // opacity: 0;
+  // pointer-events: none;
+  // transition: opacity 0.1s 0s linear;
+}
+
+.panelVisible {
+  opacity: 1;
+  pointer-events: initial;
+  // transition: opacity 0.05s 0.2s linear;
+}
+
+.placeholder {
+  position: absolute;
+  inset-block-end: var(--size-xs);
+  inset-inline: var(--size-s);
+  color: var(--theme-text-secondary);
+  pointer-events: none;
+}
+
+.viewer {
+  .placeholder {
+    position: static;
+  }
+}

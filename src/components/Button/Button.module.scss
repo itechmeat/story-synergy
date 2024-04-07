@@ -1,0 +1,109 @@
+.button {
+  --twa-button-color: var(--twa-ui-kit-button-color, var(--color-button));
+  --twa-button-color-text: var(--twa-ui-kit-button-color, var(--color-button-text));
+  --twa-button-radius: var(--twa-ui-kit-button-color, 4px);
+  --twa-button-height-small: var(--twa-ui-kit-button-height-small, 24px);
+  --twa-button-height-medium: var(--twa-ui-kit-button-height-medium, 32px);
+  --twa-button-height-large: var(--twa-ui-kit-button-height-large, 40px);
+  --twa-button-font-size-small: var(--twa-ui-kit-button-font-size-small, var(--font-tiny));
+  --twa-button-font-size-medium: var(--twa-ui-kit-button-font-size-medium, var(--font-base));
+  --twa-button-font-size-large: var(--twa-ui-kit-button-font-size-large, var(--font-big));
+
+  $colors: secondary, primary, success, danger, warning, link;
+
+  @each $color in $colors {
+    $localColor: $color;
+    @if $color == 'secondary' {
+      $localColor: 'hint';
+    }
+    &.#{$color} {
+      --twa-button-color: var(--twa-ui-kit-color-button-#{$color}, var(--color-#{$localColor}));
+      --twa-button-color-text: var(
+        --twa-ui-kit-color-button-text-#{$color},
+        var(--color-button-text)
+      );
+    }
+    &.#{$color}.outlined {
+      --twa-button-color-text: var(
+        --twa-ui-kit-color-button-#{$color},
+        var(--color-#{$localColor})
+      );
+    }
+  }
+
+  $sizes: small, medium, large;
+
+  @each $size in $sizes {
+    &.#{$size} {
+      --twa-button-height: var(--twa-button-height-#{$size});
+      --twa-button-font-size: var(--twa-button-font-size-#{$size});
+    }
+  }
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-small);
+  position: relative;
+  box-sizing: border-box;
+  height: var(--twa-button-height);
+  margin: 0;
+  padding: 0 calc(var(--twa-button-height) / 2);
+  border: 1px solid var(--twa-button-color);
+  border-radius: var(--twa-button-radius);
+  background-color: var(--twa-button-color);
+  color: var(--twa-button-color-text);
+  fill: var(--twa-button-color-text);
+  font-size: var(--twa-button-font-size);
+  text-decoration: none;
+  cursor: pointer;
+
+  &.outlined {
+    color: var(--twa-button-color);
+    background-color: transparent;
+  }
+
+  &.iconButton {
+    padding: 0;
+    width: var(--twa-button-height);
+  }
+
+  &.rounded {
+    border-radius: var(--twa-button-height);
+  }
+
+  &.disabled,
+  &:disabled {
+    border-color: var(--color-hint);
+    background-color: var(--color-hint);
+    cursor: not-allowed;
+  }
+
+  &.block {
+    width: 100%;
+  }
+}
+
+.text,
+.start,
+.end {
+  flex: 0 0 auto;
+
+  .button.disabled &,
+  .button:disabled & {
+    opacity: 0.7;
+  }
+
+  .loading & {
+    opacity: 0.3;
+  }
+}
+
+.loader {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

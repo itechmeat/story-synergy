@@ -1,0 +1,26 @@
+.menu {
+  // :global(.ant-tree-indent:has(.ant-tree-indent-unit) ~ .ant-tree-switcher-noop) {
+  :global(.ant-tree-switcher-noop) {
+    display: none !important;
+  }
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}

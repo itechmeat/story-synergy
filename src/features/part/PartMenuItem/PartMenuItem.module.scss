@@ -1,0 +1,60 @@
+.part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 var(--space-base);
+  margin-bottom: -1px;
+
+  :global {
+    &.chosen {
+      text-shadow: 4px 4px 0 rgba(#000, 0.3);
+    }
+  }
+
+  &.active {
+    // text-decoration: underline double;
+    &::before {
+      content: '⇒';
+      position: absolute;
+      top: 0;
+      padding-block: 4px;
+      left: 1px;
+    }
+  }
+}
+
+.link {
+  flex: 1;
+  display: flex;
+  padding: 4px 0;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.plusButton {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-control-small);
+  height: var(--size-control-small);
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  background: none;
+  color: var(--color-border);
+  font-size: var(--font-tiny);
+  transition: gap 0.2s;
+  opacity: 0;
+  cursor: pointer;
+
+  .part:hover & {
+    opacity: 1;
+  }
+}

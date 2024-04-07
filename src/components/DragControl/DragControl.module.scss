@@ -1,0 +1,19 @@
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: var(--size-control-tiny);
+  height: var(--size-control-tiny);
+  border: none;
+  background: none;
+  cursor: move;
+
+  &:before {
+    content: '';
+    display: block;
+    flex: 0 0 6px;
+    height: 11px;
+    border: 2px dotted var(--color-border);
+  }
+}

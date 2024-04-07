@@ -1,0 +1,54 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 4px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: var(--theme-text-primary);
+  cursor: pointer;
+
+  &:focus {
+    outline: 1px solid #ddd;
+    outline-style: dotted;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover {
+      background: var(--theme-surface-10);
+    }
+  }
+
+  &:disabled {
+    color: var(--theme-text-secondary);
+    cursor: default;
+  }
+}
+
+.active {
+  &,
+  &:hover {
+    background: var(--color-primary-20);
+  }
+}
+
+.icon,
+.children {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fileInput {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+}

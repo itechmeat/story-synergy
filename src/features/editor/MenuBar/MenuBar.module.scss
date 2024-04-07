@@ -1,0 +1,32 @@
+.wrapper,
+.set {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.wrapper {
+  flex-wrap: wrap;
+  min-height: var(--size-xxxl);
+  padding: var(--size-xxs) var(--size-xs);
+  border-block-end: 1px solid var(--theme-line-20);
+}
+
+.separator {
+  flex: 0 0 auto;
+  width: 1px;
+  height: 16px;
+  background: var(--color-border);
+}
+
+.text {
+  flex: 0 0 auto;
+  color: var(--theme-text-primary);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.svg {
+  fill: var(--theme-text-primary);
+}
